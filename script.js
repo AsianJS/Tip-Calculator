@@ -3,9 +3,9 @@ function calcTip() {
   /* --------------------------------Step 1: grab the input values------------------------------------------------------ */
   //sets a variable for the tip Amount selector to the VALUE of the #tipForm selector
   //sets a variable for the bill amount selector using the VALUE of the #billInput selector
-  var tip = document.getElementById("tipForm").value;
-  var bill = document.getElementById("billInput").value;
-  var person = document.getElementById("amountOfPeople").value;
+  const tip = document.getElementById("tipForm").value;
+  const bill = document.getElementById("billInput").value;
+  const person = document.getElementById("amountOfPeople").value;
   /* ---------------------------------------Step 2: turn strings into numbers, use parseFloat() method to do this.-----------  IE: let vairable = parseFloat(stringVariable)----------------------------- */
   // sets a variable for the Tip Amount that is a number
   // sets a variable for the Bill Amount that is a number
@@ -17,15 +17,17 @@ function calcTip() {
   // sets a var to the ID of 'bill-p'
   // sets a var to the ID of 'tip-p'
   // sets a var to the ID of 'total-p'
-  var b = document.getElementById("bill-p");
-  var t = document.getElementById("tip-p");
-  var total = document.getElementById("total-p");
-  var people = document.getElementById("total-person");
+  let b = document.getElementById("bill-p");
+  let t = document.getElementById("tip-p");
+  let total = document.getElementById("total-p");
+  let people = document.getElementById("total-person");
 
   /* --------------------------------Step 4: Place your calculations here----------------------------------------------- */
   // calulate total tip (tip % * bill) and store it in the a new variable
   // calcualte total bill (totalTip + billAmount) and store it in a new variable
   let totaltip = tipamount * billamount;
+  totaltip = Math.round(totaltip * 100) / 100
+
   let totalbill = totaltip + billamount;
   let dividedbill = totalbill/person;
   dividedbill = Math.round(dividedbill * 100) / 100
